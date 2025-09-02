@@ -9,7 +9,7 @@ for (const heart of hearts) {
     })
 }
 
-//logic of call button 
+//logic of call button star count
 const stars = document.querySelectorAll('.call-btn');
 for (const star of stars) {
     star.addEventListener('click', function () {
@@ -25,10 +25,38 @@ for (const star of stars) {
 
         const newStarCount = intCatchStarCount - 20;
         catchStarCount.innerText = newStarCount;
-        alert('this is the number')//need to modify
     }
     )
 }
+const callButtons = document.querySelectorAll('.call-btn');
+const historyContainer = document.getElementById('call-history'); 
+
+for (const button of callButtons) {
+    button.addEventListener('click', function () {
+        
+        const card = this.closest('.w-2xs');
+
+       
+        const serviceName = card.querySelector('h1').innerText;
+
+       
+        const number = card.querySelector('.target-txt').innerText;
+
+       
+        alert(`Calling ${serviceName}\nNumber: ${number}\n`);
+
+       
+        if (historyContainer) {
+            const entry = document.createElement('div');
+            entry.textContent = `${serviceName} - ${number}`;
+            historyContainer.appendChild(entry);
+        }
+    });
+}
+
+
+
+
 //logic of copy count 
 const buttons = document.querySelectorAll('.copy-btn');
 for (const button of buttons) {
