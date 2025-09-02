@@ -1,3 +1,15 @@
 nav{
     display: flex;
 }
+
+.copy-btn-hover:hover{
+    color: white;
+    background-color:  #bbbbbb;
+    transition: .3s ease-in;
+}
+
+.green-btn-hover:hover{
+    color: black;
+    background-color: #dddddd;
+    transition: .3s ease-in;
+}
